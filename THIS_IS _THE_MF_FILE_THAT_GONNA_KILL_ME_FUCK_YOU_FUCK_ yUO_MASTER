@@ -1,0 +1,27 @@
+class OuterClass {
+    constructor() {
+        this.innerInstance = new InnerClass(); // Create an instance of the inner class
+    }
+
+    outerMethod() {
+        console.log("Outer method");
+        this.innerInstance.innerMethod(); // Call a method of the inner class
+    }
+
+    // Inner class definition
+    class InnerClass {
+        constructor() {
+            // Inner class constructor logic
+        }
+
+        innerMethod() {
+            console.log("Inner method");
+        }
+    }
+}
+
+// Create an instance of the outer class
+const outerInstance = new OuterClass();
+
+// Call the outer method, which will in turn call the inner method
+outerInstance.outerMethod();
